@@ -20,7 +20,36 @@ public class TetrisManager : MonoBehaviour
     public AudioClip SpriteC;
     [Header("遊戲結束音效")]
     public AudioClip SpriteD;
+    
+    private void generate()
+    {
 
+    }
+
+    public void score(int Score)
+    {
+
+    }
+
+    private void gametime()
+    {
+
+    }
+
+    private void gameover()
+    {
+
+    }
+
+    public void restart()
+    {
+
+    }
+
+    public void leave()
+    {
+
+    }
 
 
 }

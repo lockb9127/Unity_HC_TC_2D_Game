@@ -8,8 +8,17 @@ public class NewBehaviourScript : MonoBehaviour
     {
         print("你好");
         print(cat);
-
+        die();
     }
 
+    private void die()
+    {
+        neme =+10;
+        print("dd" + neme);
+
+
+
+
+    }
 
 }
