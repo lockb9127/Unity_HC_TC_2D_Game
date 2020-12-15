@@ -26,10 +26,12 @@ public class TetrisManager : MonoBehaviour
 
     }
 
-    public void score(int Score)
+    private void score01()
     {
 
     }
+
+    
 
     private void gametime()
     {
