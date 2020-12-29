@@ -5,7 +5,7 @@ public class MenuManager : MonoBehaviour
 {
     public void invokeopen()
     {
-        invoke("open", 1);
+        Invoke("open", 1);
     }
     public void open()
     {
@@ -13,7 +13,7 @@ public class MenuManager : MonoBehaviour
     }
     public void invokeleave()
     {
-        invoke("leave", 1);
+        Invoke("leave", 1);
     }
     public void leave()
     {

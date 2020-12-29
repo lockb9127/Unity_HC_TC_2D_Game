@@ -21,14 +21,15 @@ public class TetrisManager : MonoBehaviour
     [Header("遊戲結束音效")]
     public AudioClip SpriteD;
     [Header("下一個俄羅斯方塊區域")]
-    public Transform box;
+    public Transform traNextAree;
     [Header("畫布")]
     public Transform Canvas;
+    
 
     public RectTransform currentTetris;
 
     public int indexNext;
-    private void Start()
+    private void start()
     {
         RandomTetris();
     }
@@ -44,22 +45,28 @@ public class TetrisManager : MonoBehaviour
     }
     public void RandomTetris()
     {
-        indexNext = Random.Range(0, 7);
+        indexNext = Random.Range(0, 5);
         traNextAree.GetChild(indexNext).gameObject.SetActive(true);
     }
 
-    public void ControlTertis()
+    //     {
+    //              timer = 0;
+    //currentTetris.anchoredPosition -= new Vector2(0, 50);
+
+    private void Start()
     {
-        if(currentTetris)
-        {
-            time += time.deltaTime;
-            if(time>=timeFall)
-            {
-                timer = 0;
-                currentTetris.anchoredPosition -= new Vector2(0, 50);
-            }
-        }
+        SpwnTetris();
     }
+    
+    private void SpwnTetris()
+    {
+        indexNext = Random.Range(0, 5);
+        traNextAree.GetChild(indexNext).gameObject.SetActive(true);
+    }
+    public void starGame()
+     {
+
+        }
     private void score01()
     {
 
