@@ -187,6 +187,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u9577\u65B9\u5F62"
       objectReference: {fileID: 0}
+    - target: {fileID: 5850284538813096988, guid: 32087b4a1121ac547b54e0aa0a3a50a6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32087b4a1121ac547b54e0aa0a3a50a6, type: 3}
 --- !u!4 &76833915 stripped
@@ -435,6 +440,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: L
       objectReference: {fileID: 0}
+    - target: {fileID: 5592873628373298136, guid: 3f5d2af553774d14a8d47728e166e9f9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8079025208873767713, guid: 3f5d2af553774d14a8d47728e166e9f9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -537,7 +547,7 @@ MonoBehaviour:
   SpriteC: {fileID: 0}
   SpriteD: {fileID: 0}
   traNextAree: {fileID: 2087372608}
-  Canvas: {fileID: 0}
+  traCanvas: {fileID: 0}
   currentTetris: {fileID: 0}
   indexNext: 0
   timer: 0
@@ -5743,7 +5753,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.689659
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7410,6 +7420,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u69CC"
       objectReference: {fileID: 0}
+    - target: {fileID: 4923376278837192414, guid: 07ffb24e727fb5a47af161b9cd6c6d00,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07ffb24e727fb5a47af161b9cd6c6d00, type: 3}
 --- !u!4 &1895533264 stripped
@@ -7502,6 +7517,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u6B63\u65B9\u5F62"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188277322185500771, guid: 24245e59df3c38b4aa5a1bb1e0612370,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4559086449731571287, guid: 24245e59df3c38b4aa5a1bb1e0612370,
         type: 3}

@@ -23,7 +23,8 @@ public class TetrisManager : MonoBehaviour
     [Header("下一個俄羅斯方塊區域")]
     public Transform traNextAree;
     [Header("畫布")]
-    public Transform Canvas;
+    public Transform traCanvas;
+    
     
 
     public RectTransform currentTetris;
@@ -37,7 +38,16 @@ public class TetrisManager : MonoBehaviour
     public float timer;
     private void controlTertis()
     {
-        time += Time.deltaTime;
+        if (currentTetris)
+        {
+            timer += Time.deltaTime;
+
+            if (timer >= timeFall)
+            {
+                timer = 0;
+                currentTetris.anchoredPosition -= new Vector2(0, 50);
+            }
+        }
     }
     private void generate()
     {
@@ -48,7 +58,28 @@ public class TetrisManager : MonoBehaviour
         indexNext = Random.Range(0, 5);
         traNextAree.GetChild(indexNext).gameObject.SetActive(true);
     }
+    public void StrtGame()
+    {
+       GameObject tetris= traNextAree.GetChild(indexNext).gameObject;
+        Instantiate(tetris);
+        GameObject current = Instantiate(tetris, traCanvas);
+        current.GetComponent<RectTransform>().anchoredPosition = new Vector2(40, 400);
+        tetris.SetActive(false);
+        RandomTetris();
+    }
+    public void SetGround()
+    {
+        int count = currentTetris.childCount;
 
+        for (int r= 0; 1 < count; r++)
+        {
+            currentTetris.GetChild(1).name = "地板";
+            currentTetris.GetChild(1).gameObject.layer = 9;
+        }
+        
+
+        
+    }
     //     {
     //              timer = 0;
     //currentTetris.anchoredPosition -= new Vector2(0, 50);
@@ -62,6 +93,10 @@ public class TetrisManager : MonoBehaviour
     {
         indexNext = Random.Range(0, 5);
         traNextAree.GetChild(indexNext).gameObject.SetActive(true);
+    }
+    private void Update()
+    {
+        controlTertis();
     }
     public void starGame()
      {
