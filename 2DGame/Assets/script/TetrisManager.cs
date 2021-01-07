@@ -3,7 +3,7 @@
 public class TetrisManager : MonoBehaviour
 {
     [Header("掉落時間"), Range(0.1f, 10)]
-    public float time = 1.55f;
+    public float timeFall = 1.55f;
     [Header("目前分數")]
     public int score = 1;
     [Header("最高分數")]
@@ -38,17 +38,15 @@ public class TetrisManager : MonoBehaviour
     public float timer;
     private void controlTertis()
     {
-        if (currentTetris)
-        {
+        
+        
             timer += Time.deltaTime;
 
-            if (timer >= timeFall)
-            {
-                timer = 0;
-                currentTetris.anchoredPosition -= new Vector2(0, 50);
-            }
-        }
+         
     }
+
+    
+
     private void generate()
     {
 
@@ -83,6 +81,10 @@ public class TetrisManager : MonoBehaviour
     //     {
     //              timer = 0;
     //currentTetris.anchoredPosition -= new Vector2(0, 50);
+    [Header("分數判定區域")]
+    public Transform traScoreArea;
+
+   
 
     private void Start()
     {
