@@ -1,4 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
+using System.Linq;
 
 public class TetrisManager : MonoBehaviour
 {
@@ -24,25 +27,44 @@ public class TetrisManager : MonoBehaviour
     public Transform traNextAree;
     [Header("畫布")]
     public Transform traCanvas;
+    [Header("父物件")]
+    public Transform traTetrisParent;
     
     
 
     public RectTransform currentTetris;
 
     public int indexNext;
-    private void start()
+    private void Start()
     {
+        
+    
+    
         RandomTetris();
     }
 
     public float timer;
-    private void controlTertis()
+    private void ControlTertis()
     {
-        
-        
-            timer += Time.deltaTime;
 
-         
+        if (currentTetris)
+        {
+            timer += Time.deltaTime;
+            if (timer >= timeFall)
+            {
+                timer = 0;
+                currentTetris.anchoredPosition -= new Vector2(0, 50);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            currentTetris.anchoredPosition += new Vector2(50, 0);
+        }
+        if (Input.GetKeyDown(KeyCode.A)
+)       {
+            currentTetris.anchoredPosition += new Vector2(-50, 0);
+        }
+
     }
 
     
@@ -74,19 +96,28 @@ public class TetrisManager : MonoBehaviour
             currentTetris.GetChild(1).name = "地板";
             currentTetris.GetChild(1).gameObject.layer = 9;
         }
-        
-
+        for (int r = 0; r < count;r++)
+        {
+            currentTetris.GetChild(0).SetParent(traScoreArea);
+        }
+        Destroy(currentTetris.gameObject);
         
     }
-    //     {
-    //              timer = 0;
-    //currentTetris.anchoredPosition -= new Vector2(0, 50);
+   
     [Header("分數判定區域")]
     public Transform traScoreArea;
 
-   
+    private Vector2[] podsSpawn =
+    {
+        new Vector2(70,360),
+        new Vector2(70,405),
+        new Vector2(70,345),
+        new Vector2(70,375),
+        new Vector2(70,360),
+        new Vector2(70,375)
+    };
 
-    private void Start()
+private void S5art()
     {
         SpwnTetris();
     }
@@ -98,16 +129,20 @@ public class TetrisManager : MonoBehaviour
     }
     private void Update()
     {
-        controlTertis();
+        ControlTertis();
     }
-    public void starGame()
+    private bool fastDown;
+    public void SarGame()
      {
-
+        fastDown = false;
+        GameObject tetls = indexNext.GetChild(indexNext).gameobject;
+        GameObject current = Instantiate(tetls, traCanvas);
+        current.GetComponent<RectTransform>().anchoredPosition = podsSpawn(nextIdex);
+        Tetris.SetActive(false);
+        RandomTetris();
+        currentTetris = current.GetComponent<RectTransform>();
         }
-    private void score01()
-    {
-
-    }
+ 
 
     
 
